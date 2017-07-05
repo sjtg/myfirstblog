@@ -3,7 +3,17 @@
         <title>Our first blog</title>
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+      <div>
+    <h1><a href="/">Django Developer Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>{{post.created_date}}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
